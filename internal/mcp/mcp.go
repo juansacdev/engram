@@ -190,6 +190,15 @@ DEFERRED TOOLS (use ToolSearch when needed):
 
 PROACTIVE SAVE RULE: Call mem_save immediately after ANY decision, bug fix, discovery, or convention — not just when asked.
 
+## DELIVERY GUARANTEE — memory is bookkeeping, never the reply
+
+Saving to memory is internal bookkeeping. It NEVER counts as answering the user, and the user never sees your tool calls or the content you store.
+- If the answer to the user's question exists only inside a mem_save, the user never received it. Saving is not replying.
+- End every turn with your complete user-facing answer as the final message, with no tool calls after it.
+- Save memory BEFORE you compose that final answer, not after. Never let a mem_save or mem_judge be the last action in a turn that still owed the user a substantive reply.
+- If a memory chain (mem_save then mem_judge) ran late in the turn, still write the answer that was due in full in that final message — do not collapse it into a one-line "saved / done" acknowledgement.
+- Never treat the text you stored in memory as the text you delivered: memory is for your future self, the reply is for the user.
+
 ## CONFLICT SURFACING — when mem_save returns candidates
 
 After every mem_save call, check the response envelope for judgment_required.
