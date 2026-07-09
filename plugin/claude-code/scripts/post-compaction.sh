@@ -69,6 +69,14 @@ Call `mem_save` IMMEDIATELY after ANY of these:
 
 **Self-check after EVERY task**: "Did I just make a decision, fix a bug, learn something, or establish a convention? If yes → mem_save NOW."
 
+### DELIVERY GUARANTEE — memory is bookkeeping, never the reply
+Saving to memory is internal bookkeeping. It NEVER counts as answering the user — the user never sees your tool calls or the content you store.
+- If the answer exists only inside a `mem_save`, the user never received it. Saving is not replying.
+- End every turn with your complete answer as the final message, with NO tool calls after it.
+- Save memory BEFORE composing that final answer, not after. Never let a `mem_save`/`mem_judge` be the last action in a turn that still owed the user a substantive reply.
+- If a memory chain (`mem_save` → `mem_judge`) ran late, still write the full answer in that final message — do not collapse it into a one-line "saved / done".
+- Never treat what you stored in memory as what you delivered: memory is for your future self, the reply is for the user.
+
 ### SEARCH MEMORY when:
 - User asks to recall anything ("remember", "what did we do", or the equivalent in the user's language)
 - Starting work on something that might have been done before
